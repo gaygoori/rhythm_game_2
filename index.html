@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>개구리 리듬게임</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="game">
+
+  <header id="hud">
+    <div class="stat">
+      <span class="stat-label">SCORE</span>
+      <span class="stat-value" id="score">0</span>
+    </div>
+    <div class="stat">
+      <span class="stat-label">COMBO</span>
+      <span class="stat-value" id="combo">0</span>
+    </div>
+    <div class="stat">
+      <span class="stat-label">ACCURACY</span>
+      <span class="stat-value" id="accuracy">100.0%</span>
+    </div>
+    <div class="stat">
+      <span class="stat-label">LIFE</span>
+      <span class="stat-value" id="life"></span>
+    </div>
+  </header>
+
+  <div id="stage">
+    <div id="lanes">
+      <div class="lane" data-lane="0"><div class="lane-flash"></div></div>
+      <div class="lane" data-lane="1"><div class="lane-flash"></div></div>
+      <div class="lane" data-lane="2"><div class="lane-flash"></div></div>
+      <div class="lane" data-lane="3"><div class="lane-flash"></div></div>
+      <div class="lane" data-lane="4"><div class="lane-flash"></div></div>
+    </div>
+
+    <div id="judge-line"></div>
+    <div id="judge-text"></div>
+    <div id="frogs">
+      <div class="frog-col" data-lane="0"></div>
+      <div class="frog-col" data-lane="1"></div>
+      <div class="frog-col" data-lane="2"></div>
+      <div class="frog-col" data-lane="3"></div>
+      <div class="frog-col" data-lane="4"></div>
+    </div>
+
+    <div id="keys">
+      <div class="key" data-lane="0">D</div>
+      <div class="key" data-lane="1">F</div>
+      <div class="key" data-lane="2">G</div>
+      <div class="key" data-lane="3">H</div>
+      <div class="key" data-lane="4">J</div>
+    </div>
+  </div>
+
+  <div id="start-overlay" class="overlay">
+    <div class="panel">
+      <h1>개구리 리듬게임</h1>
+      <p class="sub">위에서 내려오는 개구리를 판정선에서 눌러 핑크색으로 만드세요.</p>
+      <div class="keyguide">
+        <span>D</span><span>F</span><span>G</span><span>H</span><span>J</span>
+      </div>
+      <button id="start-btn" class="btn">게임 시작</button>
+      <p class="hint">P 또는 Esc — 일시정지</p>
+    </div>
+  </div>
+
+  <div id="pause-overlay" class="overlay hidden">
+    <div class="panel">
+      <h2>일시정지</h2>
+      <button id="resume-btn" class="btn">계속하기</button>
+      <p class="hint">P 또는 Esc 로도 재개됩니다</p>
+    </div>
+  </div>
+
+  <div id="over-overlay" class="overlay hidden">
+    <div class="panel">
+      <h2>게임 오버</h2>
+      <dl class="result">
+        <div><dt>점수</dt><dd id="final-score">0</dd></div>
+        <div><dt>최대 콤보</dt><dd id="final-combo">0</dd></div>
+        <div><dt>정확도</dt><dd id="final-accuracy">100.0%</dd></div>
+      </dl>
+      <button id="restart-btn" class="btn">다시 하기</button>
+      <p class="hint">R 키로도 재시작</p>
+    </div>
+  </div>
+
+</div>
+
+<script src="game.js"></script>
+</body>
+</html>
